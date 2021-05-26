@@ -28,7 +28,7 @@ export function loginUser(username, password) {
             alert('username and password do not match');
         }
     } else {
-        alert('no such user');
+        alert('user does not exist');
     }
 }
 
