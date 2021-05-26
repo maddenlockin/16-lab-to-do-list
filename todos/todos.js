@@ -26,7 +26,9 @@ form.addEventListener('submit', (e) => {
 });
 
 const ul = document.querySelector('ul');
+
 export function renderTodos() {
+    console.log('rendertodo');
     const user= getCurrentUser();
 
     ul.textContent = '';
@@ -36,12 +38,13 @@ export function renderTodos() {
 
         li.textContent = todo.message;
 
-        if(todo.complete) {
+        if(todo.completed) {
+            
             li.style.textDecoration = 'line-through';
         }
         li.addEventListener('click', () => {
             toggleTodo(todo.id);
-
+            console.log('clicked?');
             renderTodos();
         });
         ul.append(li);

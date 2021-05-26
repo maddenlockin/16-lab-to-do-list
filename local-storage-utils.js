@@ -3,7 +3,7 @@ const CURRENT_USER = ('CURRENT_USER');
 export function createUser(username, password) {
     //check if username is already taken/go to local storage & check if already stored
     if(localStorage.getItem(username)){
-        alert('this username is taken');
+        alert('this username is not available');
     } else {
         const newUser = {
             username: username,
@@ -75,13 +75,14 @@ export function createTodo(someTodoItem) {
 
 
 export function toggleTodo(todoId) {
+    console.log('toggletodo')
     const user = getCurrentUser();
-
+    
     const matchingTodo = findById(user.todos, todoId);
 
     //if its true, make it false and visversa
     if (matchingTodo) {
-        matchingTodo.completed = !matchingTodo.campleted;
+        matchingTodo.completed = !matchingTodo.completed;
     
         saveUser(user);
     } else {
