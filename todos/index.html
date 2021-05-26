@@ -11,19 +11,17 @@
 </head>
 
 <body>
-    <main>
-            <h3 id="user"></h3>
-            <form>
-                <input name="todo" />
-                <button>Add Todo</button>
-            </form>
-        <ul>
-            
-        </ul>
+    <header class="td-class">
+        <button id="logout" class="td-button">All done</button>
+    </header>
+    <main class="td-main">
+        <h3 id="user">Things to do:</h3>
+        <form>
+            <input class="td-input" name="todo" placeholder="next I will need to..."/>
+            <button class="td-button">Add it</button>
+        </form>
+        <ul></ul>
     </main>
-    <footer>
-        <button id="logout">Log out</button>
-    </footer>
 </body>
 
 <script type="module" src="./todos.js"></script>

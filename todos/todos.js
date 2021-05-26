@@ -28,7 +28,7 @@ form.addEventListener('submit', (e) => {
 const ul = document.querySelector('ul');
 
 export function renderTodos() {
-    console.log('rendertodo');
+    //console.log('rendertodo');
     const user= getCurrentUser();
 
     ul.textContent = '';
@@ -44,7 +44,7 @@ export function renderTodos() {
         }
         li.addEventListener('click', () => {
             toggleTodo(todo.id);
-            console.log('clicked?');
+            //console.log('clicked?');
             renderTodos();
         });
         ul.append(li);

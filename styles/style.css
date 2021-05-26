@@ -1,17 +1,83 @@
+
+
 body {
     font-family: 'Sora', sans-serif;
-    
+    width: 90%;
+    margin: 0 auto;
+    background-color: rgb(229, 241, 252);
 }
-
+    
 main {
     position: relative;
-    height: 100vh;
+    padding: 5%;
     display: grid;    
+    justify-content: center;
+    text-align: center;
+    margin-top: 2%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-
-.ape {
-    font-size: 10em;
-    position: relative;
-    margin: auto;
+li {
+    display: block;
+    padding: 0.5em;
 }
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#logout {
+    margin-top: 4%;
+    padding: 4%;
+
+}
+
+header {
+    margin-top: 1%;
+    padding: 2%;
+    background-color: rgb(195, 225, 252);
+    border-radius: 15px;
+}
+
+.main {
+    border:rgb(250, 221, 185) 10px solid;
+    border-radius: 50%;
+    width: 20em;
+    height: 19em;
+    display: grid;
+    grid-template-rows: .4fr, .6fr;
+}
+
+.form {
+    display: grid;
+    grid-template-rows: 1fr, 1fr, 1fr;
+}
+
+.button {
+    width: 4em;
+    height: 3.7em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.td-main {
+    border:rgb(250, 221, 185) 10px solid;
+    border-radius: 25px;
+    width: 20em;
+    max-height: 60em;
+    text-align: center;
+}
+
+.td-button {
+    width: 4em;
+    height: 3.8em;
+    margin: 1em;
+}
+
+/* .td-class {
+    max-height: 5em;
+    padding: 0;
+} */
