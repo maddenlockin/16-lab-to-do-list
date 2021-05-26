@@ -6,19 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <title>To-do List</title>
 </head>
 
 <body>
     <main>
-        <h2>Welcome to your TO-DO List app!</h2>
-        <a href="./login">Log In Here</a>
-        <a href="./signup">Sign Up Here</a>
-        
+            <h3 id="user"></h3>
+            <form>
+                <input name="todo" />
+                <button>Add Todo</button>
+            </form>
+        <ul>
+            
+        </ul>
     </main>
+    <footer>
+        <button id="logout">Log out</button>
+    </footer>
 </body>
 
-<script type="module" src="./app.js"></script>
+<script type="module" src="./todos.js"></script>
 
 </html>
