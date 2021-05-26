@@ -1,4 +1,4 @@
-import { loginUser } from "../local-storage-utils";
+import { loginUser } from "../local-storage-utils.js";
 
 const form = document.querySelector('form');
 

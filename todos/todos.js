@@ -1,28 +1,34 @@
-import { getCurrentUser, toggleTodo } from "../local-storage-utils";
+import { getCurrentUser, toggleTodo, createTodo, logout } from "../local-storage-utils.js";
 
-const nameDiv = document.querySelector('#user');
-const logout = document.querySelector('#logout');
-
+const currentUserOnLoad = getCurrentUser();
 if (!currentUserOnLoad) {
     window.location.href = '../';
 };
-nameDiv.textContent = currentUserOnLoad.username;
+
+const todoDiv = document.querySelector('#user');
+todoDiv.textContent = currentUserOnLoad.username;
+
+const logoutButton = document.querySelector('#logout');
+logoutButton.addEventListener('click', () => {
+    logout();
+});
 
 const form = document.querySelector('form');
-form.addE('submit', (e) => {
-    e.preventDefault  
+form.addEventListener('submit', (e) => {
+    e.preventDefault();  
+
     const formData = new FormData(form);
 
     createTodo(formData.get('todo'));
-
+    
     renderTodos();
     form.reset();
 });
 
 const ul = document.querySelector('ul');
-
 export function renderTodos() {
     const user= getCurrentUser();
+
     ul.textContent = '';
 
     user.todos.forEach(todo => {
@@ -35,8 +41,10 @@ export function renderTodos() {
         }
         li.addEventListener('click', () => {
             toggleTodo(todo.id);
+
             renderTodos();
         });
         ul.append(li);
     });
 }
+renderTodos();

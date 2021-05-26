@@ -1,8 +1,8 @@
-CURRENT_USER = 'CURRENT_USER';
+const CURRENT_USER = ('CURRENT_USER');
 //call this function to create a user and log them in
 export function createUser(username, password) {
     //check if username is already taken/go to local storage & check if already stored
-    if(localStroage.getItem(username)){
+    if(localStorage.getItem(username)){
         alert('this username is taken');
     } else {
         const newUser = {
@@ -12,6 +12,7 @@ export function createUser(username, password) {
         };
         saveUser(newUser);
         loginUser(username, password);
+        window.location.href = '../todos';
     }
 }
 //check to see all good and set the CURRENT_USER in localstorage as logged in
@@ -20,7 +21,7 @@ export function loginUser(username, password) {
 
     if(user) {
         if (user.password === password) {
-            localStroage.setItem(CURRENT_USER, username);
+            localStorage.setItem(CURRENT_USER, username);
 
             window.location.href = '../todos';
         } else {
@@ -38,9 +39,9 @@ export function getUser(username) {
     return JSON.parse(stringUser);
 }
 
-//uses the username in localstroage to 
+//uses the username in localstorage to 
 export function getCurrentUser() {
-    const currentUsername = localStorge.getItem(CURRENT_USER);
+    const currentUsername = localStorage.getItem(CURRENT_USER);
 
     const user = getUser(currentUsername);
 
@@ -63,14 +64,15 @@ export function createTodo(someTodoItem) {
     const user = getCurrentUser();
 
     const newTodo = {
-        id: Math.ceil(Math.random() *9999),
-        message: SomeTodoItem,
+        id: Math.ceil(Math.random() * 9999),
+        message: someTodoItem,
         completed: false,
     };
-
+    // console.log(message)
     user.todos.push(newTodo);
     saveUser(user);
 }
+
 
 export function toggleTodo(todoId) {
     const user = getCurrentUser();
@@ -83,7 +85,7 @@ export function toggleTodo(todoId) {
     
         saveUser(user);
     } else {
-        alert ('That To-do does not exist');
+        alert ('That to-do does not exist');
     }
 }
 
